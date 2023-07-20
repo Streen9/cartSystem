@@ -2,6 +2,7 @@
 
 import { Component } from '@angular/core';
 import { faker } from '@faker-js/faker';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-cart-items',
@@ -12,7 +13,7 @@ export class CartItemsComponent {
   items: any[] = [];
   selectedItem: any | null = null;
 
-  constructor() {
+  constructor(private cartService: CartService) {
     for (let i = 0; i < 20; i++) {
       this.items.push({
         url: faker.image.url(),
@@ -33,7 +34,8 @@ export class CartItemsComponent {
     }, 1);
   }
 
-  addToCart(event: Event, item: any) {
+  addToCart(item: any) {
+    this.cartService.addToCart(item);
     console.log('Adding to cart:', item);
   }
 }

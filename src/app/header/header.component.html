@@ -1,0 +1,16 @@
+<!-- header.component.html -->
+
+<div class="header">
+    <!-- Your other header content here -->
+    <span (click)="showCartItems()">Cart Items: {{ cartItemCount }}</span>
+  </div>
+
+  <dialog id="myDialog">
+    <button (click)="closeDialog()" class="btn btn-dark">Close</button>
+    <div *ngFor="let item of cartItemsLocal">
+        <div class="row">
+            {{item.itemName}}
+        </div>
+    </div>
+  </dialog>
+  

@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartItemsComponent } from './cart-items/cart-items.component';
 import { ChunkPipe } from './chunk.pipe';
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
     ChunkPipe,
-    CartItemsComponent
+    CartItemsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
