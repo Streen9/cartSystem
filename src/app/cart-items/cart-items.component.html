@@ -1,12 +1,18 @@
-
-<div class="row" *ngFor="let rowItems of items | chunk : 3">
-  <div class="col-sm-4 col-12" *ngFor="let item of rowItems" (click)="showDescription(item)">
-    <img [src]="item.url" alt="item Image" class="img-fluid" style="width: 50%" />
-    <p>{{ item.itemName }}</p>
-    <div class="item-description" style="width: 50%" *ngIf="item === selectedItem">
-      <button (click)="closeItem()">X</button>
-      <p>{{ item.description }}</p>
-      <button (click)="addToCart($event, item)">Add to cart</button>
+<div class="row">
+  <div class="col-sm-4 col-0"></div>
+  <div class="col-sm-8 col-12">
+  
+    <div class="row" *ngFor="let rowItems of items | chunk : 3">
+      <div class="col-sm-4 col-12 mb-1" *ngFor="let item of rowItems" (click)="showDescription(item)">
+        <img [src]="item.url" alt="item Image" class="img-fluid" style="" />
+        <p>{{ item.itemName }}</p> 
+        <div class="item-description" style="" *ngIf="item === selectedItem">
+          <button class="btn btn-dark" style="width: fit-content;text-align: right;" (click)="closeItem()">X</button>
+          <p>{{ item.description }}</p>
+          <button class="btn btn-primary" (click)="addToCart($event, item)">Add to cart</button>
+        </div>
+      </div>
     </div>
-  </div>
+    
+    </div>
 </div>
