@@ -3,10 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { CartItemsComponent } from './cart-items/cart-items.component';
+import { ChunkPipe } from './chunk.pipe';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChunkPipe,
+    CartItemsComponent
   ],
   imports: [
     BrowserModule,
